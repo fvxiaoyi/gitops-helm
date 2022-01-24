@@ -1,0 +1,17 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: demo-ingress-route
+spec:
+  entryPoints:
+    - web
+  routes:
+  - match: Host(`{{ .Values.ingress.host}}`) && PathPrefix(`/demo`)
+    kind: Rule
+    services:
+    - name: demo-svc
+      port: {{ .Values.service.port }}
+    middlewares:            
+    - name: test-stripprefix
+      namespace: default  
+
