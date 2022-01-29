@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  tag: 56
+  tag: 58
 
 service:
   port: 8080
