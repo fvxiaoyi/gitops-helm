@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  tag: 4
+  tag: 27
 
-service:
-  port: 8080
-
-ingress:
-  host: 192.168.137.2
+agent:
+  prometheus:
+    tag: 12
+  otel:
+    tag: 1
